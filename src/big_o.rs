@@ -1,6 +1,6 @@
 pub fn still_On() {
     //for loops are O(n) (linear time)
-    
+
     //O(N)l
     let mut sum = 0;
     for num in 0..=10 {
