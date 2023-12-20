@@ -9,6 +9,7 @@ fn binary_search(haystack: &[i32], needle: &i32) -> bool {
     let mut lo = 0;
     let mut hi = i32::try_from(haystack.len()).expect("");
     while lo < hi {
+        //midpoint formula + NO SCANNING (no) makes this algo O(logN)
         let midpoint = usize::try_from(lo + (hi - lo) / 2).expect("");
         let value = haystack[midpoint];
         if &value == needle {
@@ -33,6 +34,6 @@ fn passing_tests() {
 fn failing_tests() {
     let haystack = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     for n in 11..100 {
-        assert_eq!(binary_search(&haystack, &n), false)
+        assert_eq!(binary_search(&haystack, &n), false);
     }
 }
