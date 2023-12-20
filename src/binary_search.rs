@@ -1,6 +1,6 @@
 pub fn binary_search_main() {
-    let haystack = [1,2,3,4,5,6,7,8,9,10];
-    let needle= 1;
+    let haystack = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    let needle = 1;
     let res = binary_search(&haystack, &needle);
     dbg!(&res);
 }
@@ -11,7 +11,7 @@ fn binary_search(haystack: &[i32], needle: &i32) -> bool {
     while lo < hi {
         let midpoint = lo + (hi - lo) / 2;
         if &midpoint == needle {
-            return true
+            return true;
         } else if &midpoint > needle {
             hi = midpoint;
         } else {
@@ -22,7 +22,7 @@ fn binary_search(haystack: &[i32], needle: &i32) -> bool {
 }
 #[test]
 fn passing_tests() {
-    let haystack = [1,2,3,4,5,6,7,8,9,10];
+    let haystack = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     for n in 0..10 {
         println!("{}", &n);
         assert_eq!(binary_search(&haystack, &n), true);
@@ -30,7 +30,7 @@ fn passing_tests() {
 }
 #[test]
 fn failing_tests() {
-    let haystack = [1,2,3,4,5,6,7,8,9,10];
+    let haystack = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     for n in 10..100 {
         assert_eq!(binary_search(&haystack, &n), false)
     }
