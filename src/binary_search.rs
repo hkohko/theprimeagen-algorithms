@@ -9,7 +9,7 @@ fn binary_search(haystack: &[i32], needle: &i32) -> bool {
     let mut lo = 0;
     let mut hi = i32::try_from(haystack.len()).expect("");
     while lo < hi {
-        //midpoint formula + NO SCANNING (no) makes this algo O(logN)
+        //midpoint formula + NO SCANNING (no walking through the array) makes this algo O(logN)
         let midpoint = usize::try_from(lo + (hi - lo) / 2).expect("");
         let value = haystack[midpoint];
         if &value == needle {
